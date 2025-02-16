@@ -40,6 +40,7 @@ module.exports = {
         aspects: ['invalidHref'], // Warn if an `<a>` tag lacks a valid href
       },
     ],
+    'jsx-a11y/sort-props': ['warn', { ignoreCase: true }], // or 'error' for stricter enforcement
   },
   settings: {
     react: {

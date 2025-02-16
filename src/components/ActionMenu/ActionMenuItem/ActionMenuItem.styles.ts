@@ -2,7 +2,6 @@ import { styled } from '@mui/material/styles';
 import Theme from '@/theme/Theme';
 import { Chip, Paper, Typography } from '@mui/material';
 
-
 export const StyledActionMenuItemWrapper = styled(Paper)({
   display: 'flex',
   flexDirection: 'column',
@@ -28,13 +27,11 @@ export const StyledTitle = styled('div')({
   justifyContent: 'space-between',
 });
 
-
 export const StyledText = styled(Typography)({
   flexGrow: 1,
 });
 
 export const StyledTag = styled(Chip)({
   borderRadius: 0,
-  width: 'min-content'
+  width: 'min-content',
 });
-

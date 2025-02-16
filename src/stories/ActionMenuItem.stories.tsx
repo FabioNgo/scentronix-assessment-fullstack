@@ -2,7 +2,6 @@ import { Meta, StoryObj } from '@storybook/react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { ActionMenuItem } from '@/components/ActionMenu/ActionMenuItem/ActionMenuItem'; // Example icons
 
-
 const meta = {
   title: 'Components/ActionMenu/ActionMenuItem',
   component: ActionMenuItem,
@@ -45,7 +44,6 @@ export const Default: Story = {
   },
 };
 
-
 // Story with a different icon and price
 export const Variant: Story = {
   args: {
@@ -54,7 +52,6 @@ export const Variant: Story = {
     price: '$25',
   },
 };
-
 
 // Story with a longer text
 export const WithDescription: Story = {

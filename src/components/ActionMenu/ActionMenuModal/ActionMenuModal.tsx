@@ -10,13 +10,18 @@ import {
 import { ReactNode, RefObject, useEffect, useRef, useState } from 'react';
 
 export type ActionMenuModalProps = {
-  items?: ActionMenuItemListProps['items']
-  position?: 'top' | 'bottom' | 'middle', children?: ReactNode,
-  isOpen: boolean
-}
+  items?: ActionMenuItemListProps['items'];
+  position?: 'top' | 'bottom' | 'middle';
+  children?: ReactNode;
+  isOpen: boolean;
+};
 
-export function ActionMenuModal({ items, position = 'top', children, isOpen }: ActionMenuModalProps) {
-
+export function ActionMenuModal({
+  items,
+  position = 'top',
+  children,
+  isOpen,
+}: ActionMenuModalProps) {
   const contentRef: RefObject<HTMLDivElement | null> = useRef(null);
   const buttonRef: RefObject<HTMLDivElement | null> = useRef(null);
   const [top, setTop] = useState(0);
@@ -30,8 +35,10 @@ export function ActionMenuModal({ items, position = 'top', children, isOpen }: A
         break;
       case 'middle':
         setTop(() => {
-          const verticalCenterButton = (button?.top ?? 0) + (button?.height ?? 0) / 2;
-          const verticalCenterContent = (content?.top ?? 0) + (content?.height ?? 0) / 2;
+          const verticalCenterButton =
+            (button?.top ?? 0) + (button?.height ?? 0) / 2;
+          const verticalCenterContent =
+            (content?.top ?? 0) + (content?.height ?? 0) / 2;
           return verticalCenterButton - verticalCenterContent;
         });
         break;
@@ -44,15 +51,14 @@ export function ActionMenuModal({ items, position = 'top', children, isOpen }: A
     }
   }, [position]);
 
-  return <StyledActionModal>
-    <StyledButton ref={buttonRef}>
-      {children}
-    </StyledButton>
-    {isOpen && items && items.length > 0 && <StyledContent ref={contentRef} top={top}>
-      <ActionMenuItemList
-        items={items}
-      />
-    </StyledContent>}
-
-  </StyledActionModal>;
+  return (
+    <StyledActionModal>
+      <StyledButton ref={buttonRef}>{children}</StyledButton>
+      {isOpen && items && items.length > 0 && (
+        <StyledContent ref={contentRef} top={top}>
+          <ActionMenuItemList items={items} />
+        </StyledContent>
+      )}
+    </StyledActionModal>
+  );
 }
