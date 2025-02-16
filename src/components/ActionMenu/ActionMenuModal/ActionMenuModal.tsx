@@ -38,7 +38,7 @@ export function ActionMenuModal({
           const verticalCenterButton =
             (button?.top ?? 0) + (button?.height ?? 0) / 2;
           const verticalCenterContent =
-            (content?.top ?? 0) + (content?.height ?? 0) / 2;
+            (button?.top ?? 0) + (content?.height ?? 0) / 2;
           return verticalCenterButton - verticalCenterContent;
         });
         break;

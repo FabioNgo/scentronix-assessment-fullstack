@@ -4,10 +4,6 @@ import Theme from '@/theme/Theme';
 export const StyledActionModal = styled('div')({
   display: 'flex',
   flexDirection: 'row-reverse',
-  position: 'absolute',
-  zIndex: 1000,
-  left: 0,
-  top: 0,
   gap: Theme.spacing(2),
   width: '100%',
 });

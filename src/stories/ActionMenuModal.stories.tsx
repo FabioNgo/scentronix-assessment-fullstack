@@ -23,6 +23,10 @@ export default {
       },
       description: 'Position of the menu',
     },
+    isOpen: {
+      type: { name: 'boolean', required: true },
+      description: 'Is the menu open',
+    },
   },
 } as Meta<typeof ActionMenuModal>;
 
