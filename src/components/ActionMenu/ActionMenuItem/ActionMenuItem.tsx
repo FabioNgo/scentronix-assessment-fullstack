@@ -5,8 +5,9 @@ import {
   StyledText,
   StyledTitle,
 } from '@/components/ActionMenu/ActionMenuItem/ActionMenuItem.styles';
-import { Typography } from '@mui/material';
+import { Typography, useMediaQuery } from '@mui/material';
 import { ReactNode } from 'react';
+import Theme from '@/theme/Theme';
 
 export type ActionMenuItemProps = {
   icon: ReactNode;
@@ -23,8 +24,15 @@ export function ActionMenuItem({
   tag,
   description,
 }: ActionMenuItemProps) {
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   return (
-    <StyledActionMenuItemWrapper>
+    <StyledActionMenuItemWrapper
+      sx={{
+        paddingTop: Theme.spacing(isMobile ? 1.5 : 2),
+        paddingBottom: Theme.spacing(isMobile ? 1.5 : 2),
+      }}
+    >
       <StyledHeader>
         <StyledTitle>
           {icon}

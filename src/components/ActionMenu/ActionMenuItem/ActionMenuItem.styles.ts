@@ -7,8 +7,6 @@ export const StyledActionMenuItemWrapper = styled(Paper)({
   flexDirection: 'column',
   paddingLeft: Theme.spacing(3),
   paddingRight: Theme.spacing(3),
-  paddingTop: Theme.spacing(1.5),
-  paddingBottom: Theme.spacing(1.5),
   justifyContent: 'center',
   gap: Theme.spacing(2),
 });
