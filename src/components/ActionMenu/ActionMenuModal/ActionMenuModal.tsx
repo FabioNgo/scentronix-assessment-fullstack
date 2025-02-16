@@ -10,12 +10,12 @@ import {
 import { ReactNode, RefObject, useEffect, useRef, useState } from 'react';
 
 export type ActionMenuModalProps = {
-  items: ActionMenuItemListProps['items']
-  position?: 'top' | 'bottom' | 'middle',
-  children?: ReactNode,
+  items?: ActionMenuItemListProps['items']
+  position?: 'top' | 'bottom' | 'middle', children?: ReactNode,
+  isOpen: boolean
 }
 
-export function ActionMenuModal({ items, position = 'bottom', children }: ActionMenuModalProps) {
+export function ActionMenuModal({ items, position = 'top', children, isOpen }: ActionMenuModalProps) {
 
   const contentRef: RefObject<HTMLDivElement | null> = useRef(null);
   const buttonRef: RefObject<HTMLDivElement | null> = useRef(null);
@@ -48,11 +48,11 @@ export function ActionMenuModal({ items, position = 'bottom', children }: Action
     <StyledButton ref={buttonRef}>
       {children}
     </StyledButton>
-    <StyledContent ref={contentRef} top={top}>
+    {isOpen && items && items.length > 0 && <StyledContent ref={contentRef} top={top}>
       <ActionMenuItemList
         items={items}
       />
-    </StyledContent>
+    </StyledContent>}
 
   </StyledActionModal>;
 }
