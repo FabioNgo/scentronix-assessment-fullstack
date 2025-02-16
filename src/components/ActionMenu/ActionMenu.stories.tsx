@@ -15,6 +15,10 @@ export default {
       type: { name: 'string', required: true },
       description: 'Text of the button',
     },
+    marginTop: {
+      type: { name: 'number', required: false },
+      description: 'Margin top of the button',
+    },
   },
 } as Meta<typeof ActionMenu>;
 
@@ -49,4 +53,5 @@ WithItems.args = {
   ],
   buttonText: 'Add',
   buttonIcon: <Add />,
+  marginTop: 0,
 };

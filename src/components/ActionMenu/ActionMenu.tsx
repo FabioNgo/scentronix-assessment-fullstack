@@ -15,9 +15,15 @@ export type ActionMenuProps = {
   buttonText: string;
   buttonIcon: ComponentProps<typeof Button>['startIcon'];
   items?: ActionMenuModalProps['items'];
+  marginTop?: number;
 };
 
-export function ActionMenu({ buttonText, buttonIcon, items }: ActionMenuProps) {
+export function ActionMenu({
+  buttonText,
+  buttonIcon,
+  items,
+  marginTop = 0,
+}: ActionMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
@@ -42,7 +48,7 @@ export function ActionMenu({ buttonText, buttonIcon, items }: ActionMenuProps) {
   }, [isOpen]);
 
   return (
-    <StyledWrapper ref={ref} style={{ marginTop: '80vh' }}>
+    <StyledWrapper ref={ref} style={{ marginTop }}>
       <ActionMenuModal items={items} position={position} isOpen={isOpen}>
         {!isOpen && (
           <StyledButton
